@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/Layout.FillWidth"
+        android:layout_height="50dp"
+        android:background="#faf741"
+        android:gravity="center_vertical">
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_launcher_foreground" />
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnCart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/carticon_round" />
+
+        <TextView
+            android:id="@+id/lblHeaderTitle"
+            style="@style/Layout.FillWidth"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="abd"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/bg_search">
+
+        <Button
+            android:id="@+id/btnSearhNormal"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/txtSearchKeyword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="40dp"
+            android:layout_toRightOf="@id/btnSearhNormal"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:imeOptions="actionSearch"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:textColor="@color/brown" />
+
+        <Button
+            android:id="@+id/btn_del_search"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9dp"
+            android:background="@drawable/icon_xghrey" />
+    </RelativeLayout>
+
+    <com.shss.restaurantwaiter.widget.AutoBgButton
+        android:id="@+id/btnCustomerAccount"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_customer_account" />
+
+    <ListView
+        android:id="@+id/lsvProduct"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/btnCustomerAccount"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"></ListView>
+
+</RelativeLayout>

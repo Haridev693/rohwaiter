@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ROH Waiter</string>
+    <!--webservice config-->
+
+    <string name="server_backend_link">http://shs2apicalls.pe.hu/backend</string>
+
+    <!--<string name="server_backend_link">http://192.168.1.101/backend</string>-->
+
+    <!--admob & other key-->
+
+</resources>

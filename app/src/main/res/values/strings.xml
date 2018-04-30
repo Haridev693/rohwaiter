@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Log in -->
+    <string name="login">Login</string>
+    <string name="userHint">UserName</string>
+    <string name="passHint">******</string>
+    <string name="forward">Forward</string>
+    <string name="btn_import">Import</string>
+    <string name="tables">Tables</string>
+    <string name="table">Table</string>
+    <string name="customerAccount">Customer Account</string>
+    <string name="total">Total:</string>
+
+    <string name="dialog_quit">Are you sure you want to QUIT?</string>
+    <string name="quit">Quit</string>
+    <string name="no">No</string>
+    <!-- Product -->
+    <string name="dola">$</string>
+    <string name="addnote">Add Note</string>
+    <string name="note">Note</string>
+    <string name="delete">Delete</string>
+    <string name="clearAll">Clear All</string>
+    <!--<string name="sendCart">PAY</string>-->
+    <string name="sendCart">BILL</string>
+    <string name="order">Order</string>
+    <string name="insumos">Insumos</string>
+    <string name="account">Account</string>
+    <string name="about">About</string>
+    <string name="sub_total">SUB TOTAL:</string>
+    <!--  -->
+    <string name="strSingle">Single</string>
+    <string name="strInARelation">Couples</string>
+    <string name="strMarried">Married</string>
+    <string name="strSeparated">Separate</string>
+    <string name="strDivorced">Divorced</string>
+    <string name="strMale">Male</string>
+    <string name="strFemale">Female</string>
+    <!-- -->
+    <string name="strBirthday">Birthday</string>
+    <string name="strBreakfast">Breakfast</string>
+    <string name="strBrunch">Brunch</string>
+    <string name="strLunch">Lunch</string>
+    <string name="strDinner">Dinner</string>
+    <string name="strCocktail">Cocktail</string>
+    <string name="strCocktailDinner">Cocktail dinner</string>
+    <string name="strBarbecue">Barbecue</string>
+    <string name="strParty">Party</string>
+
+    <!--  -->
+    <string name="not_connection">Not Connection. Please check net work.</string>
+
+
+    <!-- String Button -->
+    <string name="button_ok">OK</string>
+    <string name="button_no">NO</string>
+    <string name="button_oui">YES</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="none_found">No device found</string>
+    <string name="select_device">Select a Device</string>
+    <string name="none_paired">None paired</string>
+    <string name="scanning">Scanning</string>
+    <string name="title_paired_devices">Paired list</string>
+    <string name="title_other_devices">Other Devices</string>
+    <string name="button_scan">Scan</string>
+    <string name="not_connected">Not connected</string>
+    <string name="setting"><u>Setting</u></string>
+    <string name="about_us"><u>About us</u></string>
+
+</resources>

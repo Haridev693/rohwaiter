@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+
+    <!--ed1c24-->
+    <RelativeLayout
+        style="@style/Layout.FillWidth"
+        android:layout_height="50dp"
+        android:background="#faf741"
+        android:gravity="center_vertical" >
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_launcher_foreground" />
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnCart"
+            style="@style/Layout.WrapWidthHeight.Vertical"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/carticon_round"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/lblHeaderTitle"
+            style="@style/Layout.FillWidth"
+            android:layout_alignEnd="@+id/btnCart"
+            android:layout_alignRight="@+id/btnCart"
+            android:layout_alignTop="@+id/btnCart"
+            android:gravity="center"
+            android:text="abd"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lsvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="56dp"
+        android:layout_marginTop="50dp" >
+    </ListView>
+
+    <com.shss.restaurantwaiter.widget.AutoBgButton
+        android:id="@+id/btnCustomerAccount"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_customer_account" />
+
+    <!-- <com.projectemplate.restaurantwaiter.widget.AutoBgButton -->
+    <!-- android:id="@+id/btnCustomerAccount" -->
+    <!-- style="@style/Button.Normal.Yellow" -->
+    <!-- android:layout_height="56dp" -->
+    <!-- android:layout_alignParentBottom="true" -->
+    <!-- android:text="@string/customerAccount" /> -->
+
+</RelativeLayout>

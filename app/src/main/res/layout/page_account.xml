@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        style="@style/Layout.FillWidth"
+        android:layout_height="50dp"
+        android:background="#faf741" >
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btn_homeAcc"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/home_back_round" />
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnBackAcc"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/lblTittleAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="abd"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ebebeb"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/Layout.FillWidthHeight"
+            android:layout_margin="7dp"
+            android:background="#ffffff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblTitleAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Bill"
+                android:textSize="30sp" />
+
+            <View
+                style="@style/Layout.FillWidth"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <ListView
+                android:id="@+id/lsvAccount"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1" />
+
+            <View
+                style="@style/Layout.FillWidth"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:orientation="horizontal" >
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnSendCart"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:background="#3b3c3d"
+            android:text="@string/sendCart"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:gravity="end"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lblSubTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="80dp"
+                    android:text="Sub Total :"
+                    android:layout_alignParentRight="true"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 $"
+                    android:layout_toLeftOf="@+id/lblSubTotal"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/txtSubTotal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblSubTotal"
+                    android:layout_alignParentRight="true"
+                    android:text="CGST       :"
+                    android:textSize="20sp"
+                    android:layout_marginRight="80dp"
+                    android:id="@+id/lblCGST"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 $"
+                    android:layout_toLeftOf="@+id/lblSubTotal"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/txtCGST"
+                    android:layout_below="@+id/txtSubTotal"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblCGST"
+                    android:layout_alignParentRight="true"
+                    android:text="IGST        :"
+                    android:textSize="20sp"
+                    android:layout_marginRight="80dp"
+                    android:id="@+id/lblIGST"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 $"
+                    android:layout_toLeftOf="@+id/lblSubTotal"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/txtIGST"
+                    android:layout_below="@+id/txtCGST"
+                    android:visibility="gone"
+                    />
+
+                <View
+                    android:id="@+id/gach_ngang_ngan"
+                    android:layout_width="160dp"
+                    android:layout_height="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@+id/lblIGST"
+                    android:layout_alignParentRight="true"
+                    android:background="#000000" />
+
+                <TextView
+                    android:id="@+id/lblTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="80dp"
+                    android:text="Total :"
+                    android:textSize="25sp"
+                    android:layout_below="@+id/gach_ngang_ngan"
+                    android:layout_alignParentRight="true"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 $"
+                    android:layout_toLeftOf="@+id/lblSubTotal"
+                    android:textSize="25sp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/txtTotal"
+                    android:layout_below="@+id/gach_ngang_ngan"
+                    />
+
+            </RelativeLayout>
+
+            <!--android:text="10% : 0.0$"-->
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

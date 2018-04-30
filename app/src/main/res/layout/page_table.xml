@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/Layout.FillWidth"
+        android:layout_height="50dp"
+        android:background="#faf741">
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnBackCart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/lblTitleCart"
+            style="@style/Layout.WrapWidthHeight.Vertical"
+            android:layout_centerInParent="true"
+            android:text="abd"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <com.shss.restaurantwaiter.widget.AutoBgButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/refresh_fore" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grvTable"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:columnWidth="90dp"
+        android:divider="@color/red"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:listSelector="@drawable/my_selector"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>

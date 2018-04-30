@@ -1,0 +1,80 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- App theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowSoftInputMode">stateHidden</item>
+    </style>
+
+    <style name="Text.WrapWidth.Big">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="Button.Normal" parent="Text.FillWidth.Bold">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Button.Normal.Violet">
+        <item name="android:background">@color/violet</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Button.Normal.Yellow">
+        <item name="android:background">@color/yellow</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Button.Normal.ButtonBlue">
+        <item name="android:background">@color/color_button_blue</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Button.Normal.ButtonRed">
+        <item name="android:background">@color/red</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Button.Normal.Gray">
+        <item name="android:background">@color/gray</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="Button.Normal.White">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+    <!--
+    <style name="Button.Normal.GrayBorder">
+        <item name="android:background">@drawable/btn_gray_border</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    -->
+
+    <style name="Text.Title.Bold.Gray">
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="Text.Title.Bold.Violet">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+    <style name="Text.Title.Violet">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+    <style name="Text.Title.Gray">
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="Text.Content.Gray">
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="Text.Content.Violet">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
+</resources>

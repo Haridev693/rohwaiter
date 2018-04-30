@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="message_network_is_unavailable">Network not available.</string>
+    <string name="message_please_input_your_username_or_password_before_login">Please enter your name user or password before the connection</string>
+    <string name="message_confirm_long_loading">Bad internet connection. Do you want to continue loading</string>
+    <string name="message_server_error">There was a server error, please try again.</string>
+    <string name="message_connection_shut_down">The connection is too slow, loading canceled</string>
+    <string name="message_confirm_work_offline_mode">No network available or can not connect to the server now. Do you want to work offline?</string>
+    <string name="message_invalid_account_info">You have entered a user name or password is invalid. Please try again!</string>
+    <string name="message_alert_order">You must select dishes before order</string>
+    <string name="message_send_cart_success">Bill is generated successfully!</string>
+    <!--<string name="message_send_cart_success">Payment is successfully!</string>-->
+
+</resources>
