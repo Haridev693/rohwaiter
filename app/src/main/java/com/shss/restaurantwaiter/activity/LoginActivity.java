@@ -158,6 +158,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
             }
             if (check) {
                 GlobalValue.preferences.setUserID(arrUser.get(ii).getUserId());
+                GlobalValue.preferences.setUserInfo(arrUser.get(ii));
+//                GlobalValue.preferences.getUserInfo().getUserName();
                 Bundle b = new Bundle();
                 b.putString("UserID", arrUser.get(ii).getUserId());
                 gotoActivity(LoginActivity.this, TableActivity.class, b);

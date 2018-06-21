@@ -368,13 +368,15 @@ public class CartActivity extends BaseActivity implements OnClickListener {
                             public void onSuccess(Object object) {
                                 // TODO Auto-generated method stub
 //                                formReceipt();
-                                if(session.getSetting().EnablePrinter)
+//                                if(session.getSetting().EnablePrinter)
 //                                    formReceipt();
 //                                PrintBluetoothReceipt(json);
 
-                                if(formReceipt()) {
-                                    Toast.makeText(self, "Sending your order successfully!",
-                                            Toast.LENGTH_SHORT).show();
+                                if(session.getSetting().EnablePrinter) {
+                                    if (formReceipt()) {
+                                        Toast.makeText(self, "Sending your order successfully!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                                 else
                                 {
@@ -405,6 +407,10 @@ public class CartActivity extends BaseActivity implements OnClickListener {
         timeStamp.format(Calendar.getInstance().getTime());
         bl = new StringBuilder();
         bl.append("Table Number: "+ list.get(0).getTableId()+ "\n");
+        if(GlobalValue.preferences.getUserInfo()==null)
+        {}
+        else
+        bl.append("Waiter: "+ GlobalValue.preferences.getUserInfo().getUserName());
 //        bl.append("Waiter:")
         bl.append(timeStamp+"\n");
         bl.append("\n");
@@ -420,17 +426,17 @@ public class CartActivity extends BaseActivity implements OnClickListener {
 
         try
         {
-            if(session.getSetting().EnablePrinter) {
+//            if(session.getSetting().EnablePrinter) {
 
 //                Socket sock = new Socket(session.getSetting().IPADDRESS, 9100);
                 Socket sock = new Socket();
-                sock.connect(new InetSocketAddress(session.getSetting().IPADDRESS, 9100), 15000);
+                sock.connect(new InetSocketAddress(session.getSetting().IPADDRESS, 9100), 5000);
                 PrintWriter oStream = new PrintWriter(sock.getOutputStream());
                 oStream.write(bl.toString());
                 oStream.close();
                 sock.close();
                 b = true;
-            }
+//            }
         }
         catch (UnknownHostException e)
         {
