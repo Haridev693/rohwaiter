@@ -404,25 +404,29 @@ public class CartActivity extends BaseActivity implements OnClickListener {
 
         Boolean b = false;
         SimpleDateFormat timeStamp = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.US);
-        timeStamp.format(Calendar.getInstance().getTime());
+        String Timestamp1 = timeStamp.format(Calendar.getInstance().getTime());
         bl = new StringBuilder();
         bl.append("Table Number: "+ list.get(0).getTableId()+ "\n");
         if(GlobalValue.preferences.getUserInfo()==null)
         {}
         else
-        bl.append("Waiter: "+ GlobalValue.preferences.getUserInfo().getUserName());
+        bl.append("Waiter: "+ GlobalValue.preferences.getUserInfo().getUserName()+"\n");
 //        bl.append("Waiter:")
-        bl.append(timeStamp+"\n");
+        bl.append(Timestamp1+"\n");
         bl.append("\n");
         bl.append("Name         Qty Note"+ "\n");
         bl.append("\n");
         for (CartInfo c: list) {
+            if(c.getNote().equals("1")){c.setNote(" ");}
             bl.append(padTextProd(c.getNameCart(),12) +" "+ padTextProd(c.getNumberCart()+"",3) + " "+ padTextProd(c.getNote(),12) +"\n");
         }
 
-        bl.append("\n");
-        bl.append("\n");
-        bl.append("\n");
+
+//        bl.append("*end of order*"+"\n");
+//        bl.append("\n");
+//        bl.append("\n");
+//        bl.append("...");
+//        bl.append(PrinterCommand.POS_Set_LF().toString());
 
         try
         {
@@ -430,9 +434,11 @@ public class CartActivity extends BaseActivity implements OnClickListener {
 
 //                Socket sock = new Socket(session.getSetting().IPADDRESS, 9100);
                 Socket sock = new Socket();
-                sock.connect(new InetSocketAddress(session.getSetting().IPADDRESS, 9100), 5000);
+                sock.connect(new InetSocketAddress(session.getSetting().IPADDRESS, 9100), 15000);
                 PrintWriter oStream = new PrintWriter(sock.getOutputStream());
                 oStream.write(bl.toString());
+                oStream.println("\n");
+                oStream.println("\n");
                 oStream.close();
                 sock.close();
                 b = true;
