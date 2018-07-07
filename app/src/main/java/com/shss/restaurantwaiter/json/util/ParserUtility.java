@@ -137,6 +137,7 @@ public final class ParserUtility {
                 productInfo.setCode(item.getString("code"));
                 productInfo.setPrice(item.getDouble("price"));
                 productInfo.setNumberName(item.getInt("numbername"));
+                productInfo.setTotalqty(item.getString("Totalqty"));
                 arr.add(productInfo);
             }
 
@@ -179,7 +180,6 @@ public final class ParserUtility {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
         String jsonStr = jsoncart.toString();
         Log.e(TAG, "putJsonCart: " + jsonStr);
         return jsonStr;

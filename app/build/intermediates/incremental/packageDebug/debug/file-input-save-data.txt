@@ -1,0 +1,35 @@
+#Internal package file, do not edit.
+#Thu Jul 05 18:09:09 IST 2018
+7.path=trangmieng.png
+2.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+5.set=ASSET
+0.path=haisan.png
+2.baseType=DIRECTORY
+3.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+7.baseType=DIRECTORY
+2.set=ASSET
+1.path=donuong.png
+4.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+7.set=ASSET
+count=8
+5.baseType=DIRECTORY
+2.path=Restaurants.sqlite
+5.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+4.set=ASSET
+3.path=meat.png
+6.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=douong.png
+7.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+6.set=DEX
+1.baseType=DIRECTORY
+6.baseType=DIRECTORY
+5.path=image_category.png
+0.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+0.baseType=DIRECTORY
+3.set=ASSET
+6.path=classes.dex
+1.base=D\:\\Git Respository\\rohwaiter\\app\\build\\intermediates\\assets\\debug
+4.baseType=DIRECTORY
+0.set=ASSET

@@ -214,6 +214,10 @@ public final class DatabaseUtility {
 				+ " where " + DBKeyConfig.KEY_CART_NAME_CART + "='" + cartname
 				+ "'", null);
 	}
+	public boolean deleteWholeCarTable(Context context)
+	{
+		return statement.query("Delete from " + DBKeyConfig.TABLE_CART, null);
+	}
 
 	public boolean deleteTableCart(Context context, String Idtable) {
 		return statement.query("Delete from " + DBKeyConfig.TABLE_CART

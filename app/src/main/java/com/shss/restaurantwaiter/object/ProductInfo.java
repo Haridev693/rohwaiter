@@ -9,6 +9,7 @@ public class ProductInfo {
 	private int numberName;
 	private String imgCategory;
 	private String categoryId;
+	private String Totalqty;
 
 	public String getCategoryId() {
 		return categoryId;
@@ -126,5 +127,15 @@ public class ProductInfo {
 	 */
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public void setTotalqty(String totalqty)
+	{
+		this.Totalqty = totalqty;
+	}
+
+	public String getTotalqty()
+	{
+		return Totalqty;
 	}
 }

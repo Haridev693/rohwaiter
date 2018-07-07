@@ -1,6 +1,7 @@
 package com.shss.restaurantwaiter.activity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -12,6 +13,7 @@ import com.android.volley.VolleyError;
 import com.shss.restaurantwaiter.BaseActivity;
 import com.shss.restaurantwaiter.R;
 import com.shss.restaurantwaiter.adapter.CategoryAdapter;
+import com.shss.restaurantwaiter.config.GlobalValue;
 import com.shss.restaurantwaiter.json.util.ParserUtility;
 import com.shss.restaurantwaiter.modelmanager.ErrorNetworkHandler;
 import com.shss.restaurantwaiter.modelmanager.ModelManager;
@@ -99,12 +101,25 @@ public class CategoryActivity extends BaseActivity implements OnClickListener {
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // your code
+            GlobalValue.databaseUtility.deleteWholeCarTable(CategoryActivity.this);
+            onBackPressed();
+
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnCustomerAccount:
                 onClickCustomerAccount();
                 break;
             case R.id.btnBack:
+                GlobalValue.databaseUtility.deleteWholeCarTable(CategoryActivity.this);
                 onBackPressed();
                 break;
 

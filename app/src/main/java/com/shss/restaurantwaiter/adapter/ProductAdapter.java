@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.shss.restaurantwaiter.R;
 import com.shss.restaurantwaiter.config.GlobalValue;
@@ -61,10 +62,8 @@ public class ProductAdapter extends BaseAdapter implements Filterable {
 
 	@Override
 	public long getItemId(int position) {
-
 		return position;
 	}
-
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		final ViewHolder holder;
@@ -108,41 +107,129 @@ public class ProductAdapter extends BaseAdapter implements Filterable {
 				}
 			}
 			holder.imgAddProduct.setOnClickListener(new OnClickListener() {
-
 				@Override
 				public void onClick(View v) {
 					arrCart = new ArrayList<CartInfo>();
 					arrCart = GlobalValue.databaseUtility.getListCart1(context,
 							o.getIdTable(), o.getId());
-					if (arrCart.size() == 0) {
-						o.setNumberName(o.getNumberName() + 1);
-						cartinfo = new CartInfo();
-						cartinfo.setId(o.getId());
-						cartinfo.setIdTable(o.getIdTable());
-						cartinfo.setImgUrl(o.getImgCategory());
-						cartinfo.setNumberCart(o.getNumberName());
-						cartinfo.setNameCart(o.getName());
-						cartinfo.setPrice(o.getPrice());
-						cartinfo.setNote("");
-						SmartLog.log("Product",
-								"NumberName===" + o.getNumberName());
-						GlobalValue.databaseUtility.insertCart(context, cartinfo);
-						GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
-								o.getId(), o.getIdTable());
-					} else {
-						for (int i = 0; i < arrCart.size(); i++) {
-							o.setNumberName(arrCart.get(i).getNumberCart() + 1);
-						}
-						GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
-								o.getId(), o.getIdTable());
-					}
+					Log.w("ProductQuantity",o.getTotalqty());
+					if(Integer.parseInt(o.getTotalqty())!=-1)
+					{
+						if(arrCart.size()==0)
+						{
+							if(Integer.parseInt(o.getTotalqty())>=1)
+							{
+								if (arrCart.size() == 0) {
+									o.setNumberName(o.getNumberName() + 1);
+									cartinfo = new CartInfo();
+									cartinfo.setId(o.getId());
+									cartinfo.setIdTable(o.getIdTable());
+									cartinfo.setImgUrl(o.getImgCategory());
+									cartinfo.setNumberCart(o.getNumberName());
+									cartinfo.setNameCart(o.getName());
+									cartinfo.setPrice(o.getPrice());
+									cartinfo.setNote("");
+									SmartLog.log("Product",
+											"NumberName===" + o.getNumberName());
+									GlobalValue.databaseUtility.insertCart(context, cartinfo);
+									GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
+											o.getId(), o.getIdTable());
+								} else {
+									for (int i = 0; i < arrCart.size(); i++) {
+										o.setNumberName(arrCart.get(i).getNumberCart() + 1);
+									}
+									GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
+											o.getId(), o.getIdTable());
+								}
 
-					for (int i = 0; i < arrCart.size(); i++) {
-						if (arrCart.get(i).getIdTable()
-								.equalsIgnoreCase(o.getIdTable())) {
-							GlobalValue.databaseUtility.updateCart(context,
-									o.getNumberName(), o.getId(),
-									o.getIdTable());
+								for (int i = 0; i < arrCart.size(); i++) {
+									if (arrCart.get(i).getIdTable()
+											.equalsIgnoreCase(o.getIdTable())) {
+										GlobalValue.databaseUtility.updateCart(context,
+												o.getNumberName(), o.getId(),
+												o.getIdTable());
+									}
+								}
+							}
+							else
+							{
+								Toast.makeText(context, "No Stock", Toast.LENGTH_SHORT).show();
+							}
+						}
+						else
+						{
+							if(Integer.parseInt(o.getTotalqty())>=(arrCart.get(0).getNumberCart()+1))
+							{
+								if (arrCart.size() == 0) {
+									o.setNumberName(o.getNumberName() + 1);
+									cartinfo = new CartInfo();
+									cartinfo.setId(o.getId());
+									cartinfo.setIdTable(o.getIdTable());
+									cartinfo.setImgUrl(o.getImgCategory());
+									cartinfo.setNumberCart(o.getNumberName());
+									cartinfo.setNameCart(o.getName());
+									cartinfo.setPrice(o.getPrice());
+									cartinfo.setNote("");
+									SmartLog.log("Product",
+											"NumberName===" + o.getNumberName());
+									GlobalValue.databaseUtility.insertCart(context, cartinfo);
+									GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
+											o.getId(), o.getIdTable());
+								} else {
+									for (int i = 0; i < arrCart.size(); i++) {
+										o.setNumberName(arrCart.get(i).getNumberCart() + 1);
+									}
+									GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
+											o.getId(), o.getIdTable());
+								}
+
+								for (int i = 0; i < arrCart.size(); i++) {
+									if (arrCart.get(i).getIdTable()
+											.equalsIgnoreCase(o.getIdTable())) {
+										GlobalValue.databaseUtility.updateCart(context,
+												o.getNumberName(), o.getId(),
+												o.getIdTable());
+									}
+								}
+							}
+							else
+							{
+								Toast.makeText(context, "No Stock", Toast.LENGTH_SHORT).show();
+							}
+						}
+					}
+					else
+					{
+						if (arrCart.size() == 0) {
+							o.setNumberName(o.getNumberName() + 1);
+							cartinfo = new CartInfo();
+							cartinfo.setId(o.getId());
+							cartinfo.setIdTable(o.getIdTable());
+							cartinfo.setImgUrl(o.getImgCategory());
+							cartinfo.setNumberCart(o.getNumberName());
+							cartinfo.setNameCart(o.getName());
+							cartinfo.setPrice(o.getPrice());
+							cartinfo.setNote("");
+							SmartLog.log("Product",
+									"NumberName===" + o.getNumberName());
+							GlobalValue.databaseUtility.insertCart(context, cartinfo);
+							GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
+									o.getId(), o.getIdTable());
+						} else {
+							for (int i = 0; i < arrCart.size(); i++) {
+								o.setNumberName(arrCart.get(i).getNumberCart() + 1);
+							}
+							GlobalValue.databaseUtility.updateCart(context, o.getNumberName(),
+									o.getId(), o.getIdTable());
+						}
+
+						for (int i = 0; i < arrCart.size(); i++) {
+							if (arrCart.get(i).getIdTable()
+									.equalsIgnoreCase(o.getIdTable())) {
+								GlobalValue.databaseUtility.updateCart(context,
+										o.getNumberName(), o.getId(),
+										o.getIdTable());
+							}
 						}
 					}
 

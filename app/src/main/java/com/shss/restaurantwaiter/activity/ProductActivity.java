@@ -176,6 +176,7 @@ public class ProductActivity extends BaseActivity implements OnClickListener {
     }
 
     private void onClickBack() {
+
         finish();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
     }

@@ -3,6 +3,7 @@ package com.shss.restaurantwaiter.modelmanager;
 import android.content.Context;
 
 import com.android.volley.VolleyError;
+import com.shss.restaurantwaiter.config.GlobalValue;
 import com.shss.restaurantwaiter.config.WebServiceConfig;
 import com.shss.restaurantwaiter.volleynetwork.HttpError;
 import com.shss.restaurantwaiter.volleynetwork.HttpGet;
@@ -38,6 +39,7 @@ public class ModelManager {
     public static void getAllTable(final Context context, boolean isShowDialog,
                                    final ModelManagerListener listener) {
         Map<String, String> params = new HashMap<>();
+        params.put("id", GlobalValue.preferences.getUserID());
         new HttpGet(context, WebServiceConfig.getURLTable(context), params, isShowDialog, new HttpListener() {
             @Override
             public void onHttpRespones(Object respones) {
