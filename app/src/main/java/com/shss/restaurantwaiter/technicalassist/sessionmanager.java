@@ -49,6 +49,7 @@ public class sessionmanager {
     public static final String IPAddress = "IPAddr";
 
     public static final String ServerIP = "ServerIP";
+    public static final String DemoMode = "DemoMode";
 //    ServerIP
 
     public static final String ShopName = "ShopName";
@@ -133,8 +134,17 @@ public class sessionmanager {
         editor.putBoolean(EnablePrinter,s.EnablePrinter);
         editor.putString(IPAddress,s.IPADDRESS);
         editor.putString(ServerIP,s.ServerIP);
+        editor.putBoolean(DemoMode,s.DemoMode);
 
-        WebServiceConfig.Serverbackendlink = ServerIP;
+//        if(s.ServerIP)
+        WebServiceConfig.Serverbackendlink = WebServiceConfig.OrigIP + s.ServerIP;
+//        WebServiceConfig.Serverbackendlink = WebServiceConfig.Serverbackendlink+"/"+ s.ServerIP;
+//        WebServiceConfig.Serverbackendlink = ServerIP;
+
+        if(s.DemoMode)
+        {
+            WebServiceConfig.Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
+        }
 //        editor.putString(ShopName,s.ShopName);
 //        editor.putString(AddressLine1,s.AddressLine1);
 //        editor.putString(AddressLine2,s.AddressLine2);
@@ -164,6 +174,7 @@ public class sessionmanager {
         s.EnablePrinter = pref.getBoolean(EnablePrinter,false);
         s.IPADDRESS = pref.getString(IPAddress,"");
         s.ServerIP = pref.getString(ServerIP,"");
+        s.DemoMode = pref.getBoolean(DemoMode,false);
 //        s.AddressLine1 = pref.getString(AddressLine1,"");
 //        s.AddressLine2 = pref.getString(AddressLine2,"");
 //        s.ShopName = pref.getString(ShopName,"");

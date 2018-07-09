@@ -27,6 +27,7 @@ public class Settings {
         public Boolean EnablePrinter;
         public String IPADDRESS;
         public String ServerIP;
+        public Boolean DemoMode;
 
 //        public String printerFooter;// TEXT;
 //        public String bluetoothAddress; //TEXT"

@@ -17,9 +17,15 @@ public class WebServiceConfig {
     public static final String JSONCART =  "addBooking";
     public static final String SHOWCART = "showcart";
     public static final String BOOKING = "addHistory";
+    public static String OriginalLink= "";
 
-    public static String Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
-//    public static String Serverbackendlink= "http://192.168.0.105/restohelper";
+    public static String OrigIP = "https://www.restohelper.com/";
+    public static String Serverbackendlink= OrigIP + OriginalLink;
+
+
+//            "http://shs2apicalls.pe.hu/backend";
+
+    //https://restohelper.com/
 
 
 //    public sessionmanager session1;

@@ -1,36 +1,35 @@
     package com.shss.restaurantwaiter.activity;
 
     import android.annotation.SuppressLint;
-    import android.content.Context;
-    import android.content.Intent;
-    import android.os.Bundle;
-    import android.os.StrictMode;
-    import android.util.Log;
-    import android.view.View;
-    import android.view.View.OnClickListener;
-    import android.view.Window;
-    import android.widget.EditText;
-    import android.widget.Toast;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.EditText;
+import android.widget.Toast;
 
-    import com.android.volley.VolleyError;
-    import com.shss.restaurantwaiter.BaseActivity;
-    import com.shss.restaurantwaiter.R;
-    import com.shss.restaurantwaiter.config.GlobalValue;
-    import com.shss.restaurantwaiter.config.WebServiceConfig;
-    import com.shss.restaurantwaiter.database.DatabaseUtility;
-    import com.shss.restaurantwaiter.json.util.ParserUtility;
-    import com.shss.restaurantwaiter.modelmanager.ErrorNetworkHandler;
-    import com.shss.restaurantwaiter.modelmanager.ModelManager;
-    import com.shss.restaurantwaiter.modelmanager.ModelManagerListener;
-    import com.shss.restaurantwaiter.object.PickerListener;
-    import com.shss.restaurantwaiter.object.UserInfo;
-    import com.shss.restaurantwaiter.technicalassist.sessionmanager;
-    import com.shss.restaurantwaiter.utility.DialogUtility;
-    import com.shss.restaurantwaiter.utility.StringUtility;
-    import com.shss.restaurantwaiter.widget.AutoBgButton;
-    import com.shss.restaurantwaiter.widget.picker.view.SimpleDialogPicker;
+import com.android.volley.VolleyError;
+import com.shss.restaurantwaiter.BaseActivity;
+import com.shss.restaurantwaiter.R;
+import com.shss.restaurantwaiter.config.GlobalValue;
+import com.shss.restaurantwaiter.database.DatabaseUtility;
+import com.shss.restaurantwaiter.json.util.ParserUtility;
+import com.shss.restaurantwaiter.modelmanager.ErrorNetworkHandler;
+import com.shss.restaurantwaiter.modelmanager.ModelManager;
+import com.shss.restaurantwaiter.modelmanager.ModelManagerListener;
+import com.shss.restaurantwaiter.object.PickerListener;
+import com.shss.restaurantwaiter.object.UserInfo;
+import com.shss.restaurantwaiter.technicalassist.sessionmanager;
+import com.shss.restaurantwaiter.utility.DialogUtility;
+import com.shss.restaurantwaiter.utility.StringUtility;
+import com.shss.restaurantwaiter.widget.AutoBgButton;
+import com.shss.restaurantwaiter.widget.picker.view.SimpleDialogPicker;
 
-    import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class LoginActivity extends BaseActivity implements OnClickListener {
     private AutoBgButton btnForward, btnImport, btnAbout;
@@ -55,14 +54,14 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
         {
 
         }
-        else {
-            WebServiceConfig.Serverbackendlink = session2.getSetting().ServerIP;
-        }
-
-        if(WebServiceConfig.Serverbackendlink.equals(""))
-        {
-            WebServiceConfig.Serverbackendlink = context.getString(R.string.server_backend_link);
-        }
+//        else {
+//            WebServiceConfig.Serverbackendlink = session2.getSetting().ServerIP;
+//        }
+//
+//        if(WebServiceConfig.Serverbackendlink.equals(""))
+//        {
+//            WebServiceConfig.Serverbackendlink = context.getString(R.string.server_backend_link);
+//        }
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
