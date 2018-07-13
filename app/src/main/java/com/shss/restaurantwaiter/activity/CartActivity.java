@@ -29,6 +29,7 @@ import com.shss.restaurantwaiter.object.Settings;
 import com.shss.restaurantwaiter.object.TablesInfo;
 import com.shss.restaurantwaiter.technicalassist.BluetoothService;
 import com.shss.restaurantwaiter.technicalassist.sessionmanager;
+import com.shss.restaurantwaiter.utility.GlobalVariable;
 import com.shss.restaurantwaiter.widget.AutoBgButton;
 
 import java.io.IOException;
@@ -372,7 +373,7 @@ public class CartActivity extends BaseActivity implements OnClickListener {
 //                                    formReceipt();
 //                                PrintBluetoothReceipt(json);
 
-                                if(session.getSetting().EnablePrinter) {
+                                if(GlobalVariable.restAddress.PrinterIP.length()>10){
                                     if (formReceipt()) {
                                         Toast.makeText(self, "Sending your order successfully!",
                                                 Toast.LENGTH_SHORT).show();
@@ -434,7 +435,7 @@ public class CartActivity extends BaseActivity implements OnClickListener {
 
 //                Socket sock = new Socket(session.getSetting().IPADDRESS, 9100);
                 Socket sock = new Socket();
-                sock.connect(new InetSocketAddress(session.getSetting().IPADDRESS, 9100), 15000);
+                sock.connect(new InetSocketAddress(GlobalVariable.restAddress.PrinterIP, 9100), 15000);
                 PrintWriter oStream = new PrintWriter(sock.getOutputStream());
                 oStream.write(bl.toString());
                 oStream.println("\n");

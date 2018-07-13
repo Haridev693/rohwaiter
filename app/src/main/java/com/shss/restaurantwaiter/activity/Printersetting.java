@@ -76,10 +76,10 @@ public class  Printersetting extends BaseActivity implements View.OnClickListene
 
     private void InitView() {
 
-        check = (CheckBox) findViewById(R.id.CheckEnablePrinter);
-        txtview = (EditText) findViewById(R.id.PrinterIP);
+//        check = (CheckBox) findViewById(R.id.CheckEnablePrinter);
+//        txtview = (EditText) findViewById(R.id.PrinterIP);
         ServerIP = (EditText) findViewById(R.id.ServerIP);
-        printerLayout = (TextInputLayout) findViewById(R.id.printerLayout);
+//        printerLayout = (TextInputLayout) findViewById(R.id.printerLayout);
         DemoMode = (CheckBox)findViewById(R.id.CheckEnableDemo);
 
 //        bluetoothScan = (Button) findViewById(R.id.btnBluetoothscan);
@@ -94,15 +94,15 @@ public class  Printersetting extends BaseActivity implements View.OnClickListene
 
         if(setter==null){}
         else {
-            check.setChecked(setter.EnablePrinter);
-            txtview.setText(setter.IPADDRESS);
+//            check.setChecked(setter.EnablePrinter);
+//            txtview.setText(setter.IPADDRESS);
             ServerIP.setText(setter.ServerIP);
             DemoMode.setChecked(setter.DemoMode);
-            if(check.isChecked())
-            {
-              printerLayout.setVisibility(View.VISIBLE);
-
-            }
+//            if(check.isChecked())
+//            {
+//              printerLayout.setVisibility(View.VISIBLE);
+//
+//            }
 
 //            txtview.setText(setter.BluetoothAddress);
 //            Shopname.setText(setter.ShopName);
@@ -112,7 +112,7 @@ public class  Printersetting extends BaseActivity implements View.OnClickListene
 //            printerFooter.setText(setter.printerFooter);
         }
 
-        check.setOnClickListener(this);
+//        check.setOnClickListener(this);
         btnSave.setOnClickListener(this);
 //        bluetoothScan.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
@@ -306,8 +306,8 @@ public class  Printersetting extends BaseActivity implements View.OnClickListene
             case R.id.btnSaveSettings:
             {
                 Settings s = new Settings();
-                s.EnablePrinter = check.isChecked();
-                s.IPADDRESS = txtview.getText().toString();
+//                s.EnablePrinter = check.isChecked();
+//                s.IPADDRESS = txtview.getText().toString();
                 s.ServerIP = ServerIP.getText().toString();
                 s.DemoMode = DemoMode.isChecked();
 
@@ -334,13 +334,13 @@ public class  Printersetting extends BaseActivity implements View.OnClickListene
                 break;
             }
 
-            case R.id.CheckEnablePrinter:{
-                if(check.isChecked())
-                {
-                    printerLayout.setVisibility(View.VISIBLE);
-//                    txtview.setVisibility(View.VISIBLE);
-                }
-            }
+//            case R.id.CheckEnablePrinter:{
+////                if(check.isChecked())
+////                {
+////                    printerLayout.setVisibility(View.VISIBLE);
+//////                    txtview.setVisibility(View.VISIBLE);
+////                }
+//            }
         }
 
     }

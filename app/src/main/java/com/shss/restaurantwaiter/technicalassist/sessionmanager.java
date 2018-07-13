@@ -131,8 +131,8 @@ public class sessionmanager {
     public Boolean setSettings(Settings s)
     {
 //        editor.putString(PrinterAddress,s.BluetoothAddress);
-        editor.putBoolean(EnablePrinter,s.EnablePrinter);
-        editor.putString(IPAddress,s.IPADDRESS);
+//        editor.putBoolean(EnablePrinter,s.EnablePrinter);
+//        editor.putString(IPAddress,s.IPADDRESS);
         editor.putString(ServerIP,s.ServerIP);
         editor.putBoolean(DemoMode,s.DemoMode);
 
@@ -144,6 +144,7 @@ public class sessionmanager {
         if(s.DemoMode)
         {
             WebServiceConfig.Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
+            WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
         }
 //        editor.putString(ShopName,s.ShopName);
 //        editor.putString(AddressLine1,s.AddressLine1);
@@ -171,10 +172,20 @@ public class sessionmanager {
 //        s.BluetoothAddress = pref.getString(PrinterAddress,"");
 //        s.printerFooter = pref.getString(PrintFooter,"");
 //        s.GSTNumber = pref.getString(GSTNum,"");
-        s.EnablePrinter = pref.getBoolean(EnablePrinter,false);
-        s.IPADDRESS = pref.getString(IPAddress,"");
+//        s.EnablePrinter = pref.getBoolean(EnablePrinter,false);
+//        s.IPADDRESS = pref.getString(IPAddress,"");
         s.ServerIP = pref.getString(ServerIP,"");
         s.DemoMode = pref.getBoolean(DemoMode,false);
+
+        WebServiceConfig.Serverbackendlink = WebServiceConfig.OrigIP + s.ServerIP;
+
+        if(s.DemoMode)
+        {
+            WebServiceConfig.Serverbackendlink="http://shs2apicalls.pe.hu/backend";
+                        WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
+        }
+
+
 //        s.AddressLine1 = pref.getString(AddressLine1,"");
 //        s.AddressLine2 = pref.getString(AddressLine2,"");
 //        s.ShopName = pref.getString(ShopName,"");

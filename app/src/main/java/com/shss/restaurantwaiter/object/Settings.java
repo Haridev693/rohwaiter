@@ -24,8 +24,8 @@ public class Settings {
 //        public Boolean CheckPrintTranGST;
 //        public String GSTNumber;
 //        public String BluetoothAddress;
-        public Boolean EnablePrinter;
-        public String IPADDRESS;
+//        public Boolean EnablePrinter;
+//        public String IPADDRESS;
         public String ServerIP;
         public Boolean DemoMode;
 

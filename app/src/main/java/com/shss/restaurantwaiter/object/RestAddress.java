@@ -13,4 +13,6 @@ public class RestAddress {
     public String Footer1;
     public String Footer2;
     public String Footer3;
+    public String PrinterIP;
+    public Boolean BillPrint;
 }

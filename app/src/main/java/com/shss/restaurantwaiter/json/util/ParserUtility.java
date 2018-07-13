@@ -39,16 +39,7 @@ public final class ParserUtility {
         UserInfo userInfo = null;
         try {
             JSONObject object = new JSONObject(json);
-            JSONObject jshop = object.getJSONObject("setting");
 
-            r.Name = jshop.getString("rest_name");
-
-            r.AddressLine1 = jshop.getString("address_1");
-            r.AddressLine2 = jshop.getString("address_2");
-            r.SalesInvoice = jshop.getString("sales_invoice");
-            r.Footer1 = jshop.getString("footer_1");
-            r.Footer2 = jshop.getString("footer_2");
-            r.Footer3 = jshop.getString("footer_3");
 
             JSONObject item;
             JSONArray items = object.getJSONArray(KEY_DATA);
@@ -59,6 +50,26 @@ public final class ParserUtility {
                 userInfo.setUserName(item.getString("nameOperator"));
                 userInfo.setUserPassword(item.getString("passOperator"));
                 arr.add(userInfo);
+            }
+
+            JSONObject jshop = object.getJSONObject("setting");
+
+            r.Name = jshop.getString("rest_name");
+
+            r.AddressLine1 = jshop.getString("address_1");
+            r.AddressLine2 = jshop.getString("address_2");
+            r.SalesInvoice = jshop.getString("sales_invoice");
+            r.Footer1 = jshop.getString("footer_1");
+            r.Footer2 = jshop.getString("footer_2");
+            r.Footer3 = jshop.getString("footer_3");
+            if(!jshop.isNull("printer_ip"))
+            {
+                            r.PrinterIP = jshop.getString("printer_ip");
+
+            }
+            if(!jshop.isNull("app_bill"))
+            {
+                            r.BillPrint = jshop.getInt("app_bill")==1;
             }
 
             GlobalVariable.restAddress = r;

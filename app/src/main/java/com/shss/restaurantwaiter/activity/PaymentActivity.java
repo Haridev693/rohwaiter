@@ -36,6 +36,11 @@ import com.shss.restaurantwaiter.utility.DialogUtility;
 import com.shss.restaurantwaiter.utility.GlobalVariable;
 import com.shss.restaurantwaiter.widget.AutoBgButton;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -370,8 +375,13 @@ public class PaymentActivity extends BaseActivity implements OnClickListener {
                         public void onSuccess(Object json) {
                             // TODO Auto-generated method stub
 
-                            formReceipt();
+//                            formReceipt();
                             count =0;
+
+                            if(GlobalVariable.restAddress.BillPrint)
+                            {
+                                printWIFIReceipt();
+                            }
 //                            if()
 //                            if(!sessionP.getPrinter())
 //                            printBluetoothReceipt();
@@ -440,6 +450,93 @@ public class PaymentActivity extends BaseActivity implements OnClickListener {
 
         SendDataByte("\n".getBytes());
         SendDataByte("\n".getBytes());
+
+    }
+
+
+
+
+    private void printWIFIReceipt() {
+
+        String timeStamp = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
+//        SendDataByte(Command.ESC_Init);
+//        Command.ESC_Align[2] = 0x01;
+//        SendDataByte(Command.ESC_Align);
+//        Command.GS_ExclamationMark[2] = 0x10;
+//        SendDataByte(Command.GS_ExclamationMark);
+
+        bl = new StringBuilder();
+
+//        SendDataByte(PrinterCommand.POS_Set_UnderLine(2));
+        bl.append("      "+GlobalVariable.restAddress.Name+"\n");//.getBytes());
+//        SendDataByte((setter.ShopName+"\n").getBytes());
+//        SendDataByte(PrinterCommand.POS_Set_UnderLine(0));
+//        SendDataByte((setter.AddressLine1+"\n").getBytes());
+        bl.append(GlobalVariable.restAddress.AddressLine1+"\n");
+        bl.append(GlobalVariable.restAddress.AddressLine2+"\n");//.getBytes());
+
+        bl.append(timeStamp+"\n");
+        bl.append("-------------------------"+"\n");
+//        SendDataByte((setter.AddressLine2+"\n").getBytes());
+//        Command.GS_ExclamationMark[2] = 0x00;
+//        SendDataByte(Command.GS_ExclamationMark);
+        bl.append("Table:"+ list.get(0).getTableId()+ " | Waiter:"+ GlobalValue.preferences.getUserInfo().getUserName()+"\n");//.getBytes());
+        bl.append("\n");
+
+//        Command.ESC_Align[2] = 0x00;
+//        SendDataByte(Command.ESC_Align);
+        bl.append("Name         Qty Price  Total"+ "\n");
+        bl.append("\n");
+
+        for (CartInfo c: list) {
+            bl.append(padTextProd(c.getNameCart(),12) +" "+ padTextProd(c.getNumberCart()+"",3) + " "+ padTextProd(c.getPrice()+"",7)+ padTextProd(String.valueOf(c.getNumberCart()*c.getPrice()),7) +"\n");
+        }
+
+        bl.append("\n");
+        bl.append("SUB TOTAL : "+ txtSubTotal.getText()+"\n");
+
+        bl.append("\n");
+        if(GlobalVariable.taxAmount!=0) {
+            bl.append("Tax" + "\n");
+            bl.append("CGST      : " + txtCGST.getText().toString() + "\n");
+            bl.append("SGST      : " + txtIGST.getText().toString() + "\n");
+        }
+
+        bl.append("TOTAL     : "+ txtTotal.getText().toString()+"\n");
+
+        bl.append(GlobalVariable.restAddress.Footer1+"\n");
+        bl.append(GlobalVariable.restAddress.Footer2+"\n");
+        bl.append(GlobalVariable.restAddress.Footer3+"\n");
+
+        try
+        {
+//            if(session.getSetting().EnablePrinter) {
+
+//                Socket sock = new Socket(session.getSetting().IPADDRESS, 9100);
+            Socket sock = new Socket();
+            sock.connect(new InetSocketAddress(GlobalVariable.restAddress.PrinterIP, 9100), 15000);
+            PrintWriter oStream = new PrintWriter(sock.getOutputStream());
+            oStream.write(bl.toString());
+            oStream.println("\n");
+            oStream.println("\n");
+            oStream.close();
+            sock.close();
+//            }
+        }
+        catch (UnknownHostException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+//        return b;
+//        SendDataByte("\n".getBytes());
+//        SendDataByte("\n".getBytes());
+
+//        SendDataByte(setter.printerFooter.getBytes());
 
     }
 
