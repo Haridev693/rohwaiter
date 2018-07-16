@@ -1,7 +1,5 @@
 package com.shss.restaurantwaiter.adapter;
 
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -18,6 +16,8 @@ import com.androidquery.AQuery;
 import com.shss.restaurantwaiter.R;
 import com.shss.restaurantwaiter.object.CategoryInfo;
 import com.shss.restaurantwaiter.utility.lazylist.ImageLoader;
+
+import java.util.ArrayList;
 
 @SuppressLint("NewApi")
 public class CategoryAdapter extends BaseAdapter {
@@ -82,7 +82,13 @@ public class CategoryAdapter extends BaseAdapter {
 			// o.getImgUrl()));
 			holder.lblNameCategory.setText(o.getName());
 			holder.lblNameCategory.setSelected(true);
-			aq.id(holder.imgProduct).image(o.getImgUrl());
+			if(o.getImgUrl().isEmpty())
+			{
+				aq.id(holder.imgProduct).image(R.drawable.img_notfound);
+			}
+			else {
+				aq.id(holder.imgProduct).image(o.getImgUrl());
+			}
 		} else {
 			Log.i(TAG, "Null Object !");
 		}

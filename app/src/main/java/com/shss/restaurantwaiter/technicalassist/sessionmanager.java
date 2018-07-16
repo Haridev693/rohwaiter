@@ -144,7 +144,7 @@ public class sessionmanager {
         if(s.DemoMode)
         {
             WebServiceConfig.Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
-            WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
+//            WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
         }
 //        editor.putString(ShopName,s.ShopName);
 //        editor.putString(AddressLine1,s.AddressLine1);
@@ -182,7 +182,7 @@ public class sessionmanager {
         if(s.DemoMode)
         {
             WebServiceConfig.Serverbackendlink="http://shs2apicalls.pe.hu/backend";
-                        WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
+//                        WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
         }
 
 
