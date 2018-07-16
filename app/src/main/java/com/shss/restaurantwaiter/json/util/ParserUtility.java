@@ -62,6 +62,8 @@ public final class ParserUtility {
             r.Footer1 = jshop.getString("footer_1");
             r.Footer2 = jshop.getString("footer_2");
             r.Footer3 = jshop.getString("footer_3");
+            r.PrinterIP="";
+            r.BillPrint=false;
             if(!jshop.isNull("printer_ip"))
             {
                             r.PrinterIP = jshop.getString("printer_ip");
